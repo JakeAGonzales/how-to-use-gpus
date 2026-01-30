@@ -14,26 +14,25 @@ Find which **account** and **partition** you have access to.
 ```bash
 hyakalloc
 ```
-* Look for partitions with `gpu` in the name (e.g., `gpu-l40`).
-* Note the **Account** name associated with that partition should be **mlopt**.
+* Confirm the **Account** name is **mlopt** and the partition is `gpu-l40s`. 
 
 ### 3. Create Job Script (`gpu_job.slurm`)
-Create a file named `gpu_job.slurm` and paste the following. **Update the account and partition fields.**
+Create a file named `gpu_job.slurm` and paste the following. 
 
 ```bash
 #!/bin/bash
-#SBATCH --job-name=my_gpu_job
-#SBATCH --account=your_account_name   # <--- UPDATE THIS (from hyakalloc)
-#SBATCH --partition=gpu-a40           # <--- UPDATE THIS (from hyakalloc)
+#SBATCH --job-name=mlopt_gpu_job
+#SBATCH --account=mlopt             # Hardcoded for mlopt
+#SBATCH --partition=gpu-l40s        # Hardcoded for L40S partition
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=4             # CPU cores per GPU
-#SBATCH --mem=20G                     # Memory limit
-#SBATCH --gres=gpu:1                  # Request 1 GPU
-#SBATCH --time=01:00:00               # Max runtime (HH:MM:SS)
+#SBATCH --cpus-per-task=4           # Max available: 128
+#SBATCH --mem=32G                   # Max available: 1498G
+#SBATCH --gres=gpu:1                # Request 1 GPU (Max: 8)
+#SBATCH --time=01:00:00             # Max runtime (HH:MM:SS)
 
-# Load Modules (example)
-module load cuda/11.8
+# Load Modules (L40S requires CUDA 11.8+)
+module load cuda/12.2
 
 # Run Script
 python my_script.py
