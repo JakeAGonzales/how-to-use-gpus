@@ -39,6 +39,21 @@ Open your terminal and connect to the cluster:
 
 ---
 
+## 4. Check Available Resources
+
+    hyakalloc
+
+**Expected output for mlopt:**
+- **Account:** mlopt
+- **Partition:** gpu-l40s
+- **CPUs:** 128 per node
+- **Memory:** 1498G per node
+- **GPUs:** 8 per node (48 GB each)
+
+  
+---
+
+
 ## 3. Setting Up Conda
 
 ### Install Miniconda
@@ -86,19 +101,6 @@ Create `~/.condarc` to store environments and packages in gscratch:
 
     # Install PyTorch for L40S GPUs (CUDA 12.x)
     conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-
----
-
-## 4. Check Available Resources
-
-    hyakalloc
-
-**Expected output for mlopt:**
-- **Account:** mlopt
-- **Partition:** gpu-l40s
-- **CPUs:** 128 per node
-- **Memory:** 1498G per node
-- **GPUs:** 8 per node (48 GB each)
 
 ---
 
