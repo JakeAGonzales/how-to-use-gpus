@@ -31,7 +31,7 @@ Open your terminal and connect to the cluster:
     cd ~
 
     # Go to mlopt group scratch
-    cd /mmfs1/gscratch/mlopt
+    cd /gscratch/mlopt
 
     # Check disk usage
     du -sh /mmfs1/home/your_netid
