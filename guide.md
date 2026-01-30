@@ -125,7 +125,6 @@ Note: after starting an interactive session you may need to reactivate your cond
 
 Once allocated, load CUDA and test:
 
-    module load cuda/12.2
     nvidia-smi
     python your_script.py
 
