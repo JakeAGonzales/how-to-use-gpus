@@ -35,7 +35,7 @@ Open your terminal and connect to the cluster:
 
     # Check disk usage
     du -sh /mmfs1/home/your_netid
-    du -sh /mmfs1/gscratch/mlopt/your_netid
+    du -sh /gscratch/mlopt/your_netid
 
 ---
 
