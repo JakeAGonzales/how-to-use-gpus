@@ -60,6 +60,10 @@ Open your terminal and connect to the cluster:
     # Reload your shell
     source ~/.bashrc
 
+### Reference
+
+https://hyak.uw.edu/docs/tools/python/
+
 ### Configure Conda (Recommended)
 
 Create `~/.condarc` to store environments and packages in gscratch:
