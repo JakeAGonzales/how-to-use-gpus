@@ -1,8 +1,6 @@
 
 # Instructions for using L40 GPUs on Hyak
 
-## Hyak GPU Quick Start
-
 ### 1. Login
 Open your terminal (Mac/Linux) or PowerShell (Windows).
 ```bash
