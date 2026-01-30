@@ -56,7 +56,7 @@ Open your terminal and connect to the cluster:
 
 ## 3. Setting Up Conda
 
-Important note: be sure to replace 'your_netid' with your actual UW NetID. 
+Important note: be sure to replace 'your_netid' in the commands below with your actual UW NetID. 
 
 ### Install Miniconda
 
