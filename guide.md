@@ -75,7 +75,7 @@ Open your terminal and connect to the cluster:
     # Reload your shell
     source ~/.bashrc
 
-### Reference
+#### Reference
 
 https://hyak.uw.edu/docs/tools/python/
 
@@ -91,7 +91,7 @@ Create `~/.condarc` to store environments and packages in gscratch:
     always_copy: true
     EOF
 
-### Reference
+#### Reference
 
 https://hyak.uw.edu/blog/conda-disk-storage/#configuring-your-package-cache-and-envs-directories 
 
