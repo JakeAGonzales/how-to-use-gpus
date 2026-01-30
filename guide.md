@@ -53,3 +53,8 @@ squeue -u your_netid
 ```bash
 scancel job_id
 ```
+
+**Check mlopt jobs:**
+```bash
+squeue -A mlopt
+```
