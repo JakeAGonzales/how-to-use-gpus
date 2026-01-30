@@ -50,7 +50,9 @@ Open your terminal and connect to the cluster:
 - **Memory:** 1498G per node
 - **GPUs:** 8 per node (48 GB each)
 
-  
+
+#### References
+https://hyak.uw.edu/docs/compute/start-here 
 ---
 
 
@@ -157,6 +159,10 @@ Create `gpu_job.slurm`:
 
     sbatch gpu_job.slurm
 
+
+#### References
+https://hyak.uw.edu/docs/compute/scheduling-jobs
+
 ---
 
 ## 6. Monitoring Jobs
@@ -175,6 +181,9 @@ Create `gpu_job.slurm`:
 
     # View completed job info
     sacct -j job_id --format=JobID,JobName,Elapsed,State,MaxRSS
+
+#### References
+https://hyak.uw.edu/docs/compute/resource-monitoring
 
 ---
 
