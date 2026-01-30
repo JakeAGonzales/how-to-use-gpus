@@ -106,7 +106,7 @@ https://hyak.uw.edu/blog/conda-disk-storage/#configuring-your-package-cache-and-
     conda activate myenv
 
     # Install PyTorch for L40S GPUs (CUDA 12.x)
-    conda install pytorch torchvision torchaudio pytorch-cuda=12.9 -c pytorch -c nvidia
+    not sure yet. 
 
 ---
 
