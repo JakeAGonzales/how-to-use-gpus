@@ -121,6 +121,8 @@ https://hyak.uw.edu/blog/conda-disk-storage/#configuring-your-package-cache-and-
     salloc --account=mlopt --partition=gpu-l40s --nodes=1 --ntasks-per-node=1 \
       --cpus-per-task=8 --mem=64G --gres=gpu:1 --time=02:00:00
 
+Note: after starting an interactive session you may need to reactivate your conda environment. 
+
 Once allocated, load CUDA and test:
 
     module load cuda/12.2
