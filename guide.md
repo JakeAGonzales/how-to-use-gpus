@@ -110,7 +110,7 @@ https://hyak.uw.edu/blog/conda-disk-storage/#configuring-your-package-cache-and-
     conda activate myenv
 
     # Install PyTorch for L40S GPUs (CUDA 13.0)
-    not sure yet. 
+    pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130 
 
 ---
 
