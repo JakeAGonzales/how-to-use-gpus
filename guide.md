@@ -91,6 +91,10 @@ Create `~/.condarc` to store environments and packages in gscratch:
     always_copy: true
     EOF
 
+### Reference
+
+https://hyak.uw.edu/blog/conda-disk-storage/#configuring-your-package-cache-and-envs-directories 
+
 ### Create an Environment
 
     # Create environment with Python and PyTorch
