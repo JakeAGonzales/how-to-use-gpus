@@ -20,7 +20,7 @@ Open your terminal and connect to the cluster:
 - Backed up daily
 - Use for: configuration files, scripts, small datasets
 
-**Group Scratch** (`/mmfs1/gscratch/mlopt`)
+**Group Scratch** (`/gscratch/mlopt`)
 - Shared storage for the mlopt group
 - No quota limit
 - Not backed up
