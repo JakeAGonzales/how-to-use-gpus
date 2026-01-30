@@ -22,9 +22,8 @@ Open your terminal and connect to the cluster:
 
 **Group Scratch** (`/gscratch/mlopt`)
 - Shared storage for the mlopt group
-- No quota limit
-- Not backed up
-- Use for: datasets, results, conda environments
+- TBs of space
+- Use for: datasets, model checkpoints, conda environments
 
 ### Quick Navigation
 
