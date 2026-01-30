@@ -6,7 +6,7 @@ Open your terminal (Mac/Linux) or PowerShell (Windows).
 ```bash
 ssh your_netid@klone.hyak.uw.edu
 ```
-* **Password:** Enter your NetID password (hidden).
+* **Password:** Enter your NetID password.
 * **2FA:** Type `1` for Duo push.
 
 ### 2. Check Available GPUs
@@ -14,8 +14,8 @@ Find which **account** and **partition** you have access to.
 ```bash
 hyakalloc
 ```
-* Look for partitions with `gpu` in the name (e.g., `gpu-a40`, `gpu-rtx6k`).
-* Note the **Account** name associated with that partition.
+* Look for partitions with `gpu` in the name (e.g., `gpu-l40`).
+* Note the **Account** name associated with that partition should be **mlopt**.
 
 ### 3. Create Job Script (`gpu_job.slurm`)
 Create a file named `gpu_job.slurm` and paste the following. **Update the account and partition fields.**
