@@ -44,7 +44,7 @@ Open your terminal and connect to the cluster:
 ### Install Miniconda
 
     # Navigate to group scratch
-    cd /mmfs1/gscratch/mlopt
+    cd /gscratch/mlopt
 
     # Create your directory if needed
     mkdir -p your_netid
