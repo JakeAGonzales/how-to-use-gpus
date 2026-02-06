@@ -149,9 +149,6 @@ Create `gpu_job.slurm`:
     #SBATCH --output=slurm-%j.out
     #SBATCH --error=slurm-%j.err
 
-    # Load CUDA module
-    module load cuda/12.2
-
     # Activate conda environment
     source /mmfs1/gscratch/mlopt/your_netid/miniconda3/bin/activate myenv
 
