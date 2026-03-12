@@ -1,4 +1,4 @@
-# Hyak Quick Start Guide for mlopt Group
+# Hyak Quick Start Guide for ctrl Group
 
 ## 1. Login to Hyak
 
@@ -20,8 +20,8 @@ Open your terminal and connect to the cluster:
 - Backed up daily
 - Use for: configuration files, scripts, small datasets
 
-**Group Scratch** (`/gscratch/mlopt`)
-- Shared storage for the mlopt group
+**Group Scratch** (`/gscratch/ctrl`)
+- Shared storage for the ctrl group
 - TBs of space
 - Use for: datasets, model checkpoints, conda environments
 
@@ -30,12 +30,12 @@ Open your terminal and connect to the cluster:
     # Go to your home directory
     cd ~
 
-    # Go to mlopt group scratch
-    cd /gscratch/mlopt
+    # Go to ctrl group scratch
+    cd /gscratch/ctrl
 
     # Check disk usage
     du -sh /mmfs1/home/your_netid
-    du -sh /gscratch/mlopt/your_netid
+    du -sh /gscratch/ctrl/your_netid
 
 ---
 
@@ -43,12 +43,12 @@ Open your terminal and connect to the cluster:
 
     hyakalloc
 
-**Expected output for mlopt:**
-- **Account:** mlopt
+**Expected output for ctrl:**
+- **Account:** ctrl
 - **Partition:** gpu-l40s
-- **CPUs:** 128 per node
-- **Memory:** 1498G per node
-- **GPUs:** 8 per node (48 GB each)
+- **CPUs:** 32 per node
+- **Memory:** 364G per node
+- **GPUs:** 2 per node (48 GB each)
 
 
 #### References
@@ -65,7 +65,7 @@ https://hyak.uw.edu/docs/compute/start-here
 ### Install Miniconda
 
     # Navigate to group scratch
-    cd /gscratch/mlopt
+    cd /gscratch/ctrl
 
     # Create your directory if needed
     mkdir -p your_netid
@@ -73,10 +73,10 @@ https://hyak.uw.edu/docs/compute/start-here
 
     # Download and install Miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh -b -p /mmfs1/gscratch/mlopt/your_netid/miniconda3
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /mmfs1/gscratch/ctrl/your_netid/miniconda3
 
     # Initialize conda
-    /mmfs1/gscratch/mlopt/your_netid/miniconda3/bin/conda init bash
+    /mmfs1/gscratch/ctrl/your_netid/miniconda3/bin/conda init bash
 
     # Reload your shell
     source ~/.bashrc
@@ -91,9 +91,9 @@ Create `~/.condarc` to store environments and packages in gscratch:
 
     cat > ~/.condarc << 'EOF'
     envs_dirs:
-      - /mmfs1/gscratch/mlopt/your_netid/conda_envs
+      - /mmfs1/gscratch/ctrl/your_netid/conda_envs
     pkgs_dirs:
-      - /mmfs1/gscratch/mlopt/your_netid/conda_pkgs
+      - /mmfs1/gscratch/ctrl/your_netid/conda_pkgs
     always_copy: true
     EOF
 
@@ -118,7 +118,7 @@ https://hyak.uw.edu/blog/conda-disk-storage/#configuring-your-package-cache-and-
 
 ### Interactive Session (for testing)
 
-    salloc --account=mlopt --partition=gpu-l40s --nodes=1 --ntasks-per-node=1 \
+    salloc --account=ctrl --partition=gpu-l40s --nodes=1 --ntasks-per-node=1 \
       --cpus-per-task=8 --mem=64G --gres=gpu:1 --time=02:00:00
 
 Note: after starting an interactive session you may need to reactivate your conda environment. 
@@ -137,8 +137,8 @@ Exit when done:
 Create `gpu_job.slurm`:
 
     #!/bin/bash
-    #SBATCH --job-name=mlopt_job
-    #SBATCH --account=mlopt
+    #SBATCH --job-name=ctrl_job
+    #SBATCH --account=ctrl
     #SBATCH --partition=gpu-l40s
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=1
@@ -150,7 +150,7 @@ Create `gpu_job.slurm`:
     #SBATCH --error=slurm-%j.err
 
     # Activate conda environment
-    source /mmfs1/gscratch/mlopt/your_netid/miniconda3/bin/activate myenv
+    source /mmfs1/gscratch/ctrl/your_netid/miniconda3/bin/activate myenv
 
     # Run your script
     python my_script.py
@@ -170,8 +170,8 @@ https://hyak.uw.edu/docs/compute/scheduling-jobs
     # Check your jobs
     squeue -u your_netid
 
-    # Check all mlopt jobs
-    squeue -A mlopt
+    # Check all ctrl jobs
+    squeue -A ctrl
 
     # View job details
     scontrol show job job_id
@@ -189,15 +189,14 @@ https://hyak.uw.edu/docs/compute/resource-monitoring
 
 ## 7. Resource Limits
 
-**Per L40S Node:**
-- CPUs: 128 maximum
-- Memory: 1498G maximum
-- GPUs: 8 maximum (48 GB VRAM each)
+**Per L40S Node (ctrl allocation):**
+- CPUs: 32 maximum
+- Memory: 364G maximum
+- GPUs: 2 maximum (48 GB VRAM each)
 
 **Typical allocations:**
-- Small job: 8-16 CPUs, 64-128G RAM, 1 GPU
-- Medium job: 32 CPUs, 256G RAM, 2-4 GPUs
-- Large job: 64-128 CPUs, 512G-1T RAM, 4-8 GPUs
+- Small job: 8 CPUs, 64G RAM, 1 GPU
+- Large job: 16-32 CPUs, 128-364G RAM, 2 GPUs
 
 ---
 
@@ -220,7 +219,7 @@ https://hyak.uw.edu/docs/compute/resource-monitoring
     hyakalloc
 
     # Interactive GPU session
-    salloc --account=mlopt --partition=gpu-l40s --gres=gpu:1 --time=02:00:00
+    salloc --account=ctrl --partition=gpu-l40s --gres=gpu:1 --time=02:00:00
 
     # Submit batch job
     sbatch gpu_job.slurm
